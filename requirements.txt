@@ -1,4 +1,20 @@
 # Used by Vercel's Python builder for the api/index.py serverless function.
-# Kept as a pointer so backend/requirements.txt stays the single source of truth
-# (also used by docker-compose and local dev).
--r backend/requirements.txt
+# Runtime deps only (test-only deps like pytest/httpx live in backend/requirements.txt,
+# not needed here) - keep this list in sync with backend/requirements.txt by hand,
+# since Vercel's requirements.txt parser doesn't support pip's "-r" include syntax.
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+alembic==1.14.0
+psycopg2-binary==2.9.10
+pydantic==2.10.4
+pydantic-settings==2.7.0
+email-validator==2.2.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+python-multipart==0.0.20
+openpyxl==3.1.5
+reportlab==4.2.5
+python-dateutil==2.9.0.post0
+tzdata==2025.2
