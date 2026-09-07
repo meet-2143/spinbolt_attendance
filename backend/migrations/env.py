@@ -20,7 +20,7 @@ settings = get_settings()
 # used directly (not via config.set_main_option/get_section) because a
 # percent-encoded password (e.g. "%40") collides with configparser's own
 # interpolation syntax otherwise.
-db_url = settings.database_url_direct or settings.database_url
+db_url = settings.database_url_direct_normalized or settings.database_url_normalized
 
 
 def run_migrations_offline() -> None:

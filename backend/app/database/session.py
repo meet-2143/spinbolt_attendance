@@ -16,7 +16,7 @@ _engine_kwargs = {"pool_pre_ping": True}
 if settings.is_serverless:
     _engine_kwargs["poolclass"] = NullPool
 
-engine = create_engine(settings.database_url, **_engine_kwargs)
+engine = create_engine(settings.database_url_normalized, **_engine_kwargs)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 

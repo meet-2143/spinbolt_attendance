@@ -10,11 +10,12 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
 from app.auth.security import hash_password
+from app.config import normalize_db_url
 from app.database.session import Base, get_db
 from app.main import app
 from app.models.user import User, UserRole, UserStatus
 
-TEST_DATABASE_URL = os.environ["DATABASE_URL"]
+TEST_DATABASE_URL = normalize_db_url(os.environ["DATABASE_URL"])
 # Set this when DATABASE_URL points at a real project database (e.g. Supabase)
 # rather than a disposable local `attendance_test` database. Tests then run in
 # their own Postgres schema and DROP it at teardown, instead of dropping every
