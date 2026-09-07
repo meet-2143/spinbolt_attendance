@@ -1,0 +1,4 @@
+# Used by Vercel's Python builder for the api/index.py serverless function.
+# Kept as a pointer so backend/requirements.txt stays the single source of truth
+# (also used by docker-compose and local dev).
+-r backend/requirements.txt
